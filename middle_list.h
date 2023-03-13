@@ -1,8 +1,9 @@
 #ifndef MIDDLE_LIST_H_INCLUDED
 #define MIDDLE_LIST_H_INCLUDED
 #include <iostream>
+#include <string>
 #include <vector>
-#include "middle_list.h"
+
 
 using namespace std;
 

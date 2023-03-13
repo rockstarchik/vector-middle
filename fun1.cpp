@@ -14,12 +14,16 @@ return mass;
 
 string itc_join(vector <char> lst, string sep) {
     string str = "";
-    for (int i = 0; i < lst.size(); i++) {
-        str = str + lst[i];
-        str = str + sep;
+    if (lst.size() > 0) {
+        for (int i = 0; i < lst.size() - 1; i++) {
+            str = str + lst[i];
+            str = str + sep;
+        }
+        str = str + lst[lst.size() - 1];
     }
     return str;
 }
+
 
 string itc_rmstrspc(string str) {
     string a = "";
@@ -32,19 +36,24 @@ string itc_rmstrspc(string str) {
 }
 
 string itc_rmstrchar(string str, string less) {
-    int d = 0;
-    string t = "";
+    string d = "";
+    int a = 0;
     for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] == less[d]) {
-            d++;
+        for (int j = 0; less[j] != '\0'; ++j) {
+            if (less[j] == str[i]) {
+                a = 1;
+            }
+            if (a == 0) {
+                d = d + str[i];
+                a = 0;
+            }
         }
-        t = t + str[i];
     }
-    return t;
+    return d;
 }
 
 long itc_sumlst(const vector <int>& lst){
-    long sum = 0;
+    long long sum = 0;
     for (int i = 0; i < lst.size(); i++) {
         sum = sum + lst[i];
     }
