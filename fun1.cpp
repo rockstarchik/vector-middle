@@ -13,15 +13,16 @@ return mass;
 }
 
 string itc_join(vector <char> lst, string sep) {
-    string str = "";
+    string str;
     for (int i = 0; i < lst.size(); i++) {
-        str = str + lst[i] + sep;
+        char a = lst[i];
+        str = str + a + sep;
     }
     return str;
 }
 
 string itc_rmstrspc(string str) {
-    string a;
+    string a = "";
     for (int i = 0; i < str.size(); i++) {
         if (str[i] != ' ') {
             a = a + str[i];
@@ -32,12 +33,12 @@ string itc_rmstrspc(string str) {
 
 string itc_rmstrchar(string str, string less) {
     int d = 0;
-    string t;
-    for (int i = 0; i < str.size(); i++) {
+    string t = "";
+    for (int i = 0; str[i] != '\0'; i++) {
         if (str[i] == less[d]) {
             d++;
         }
-        t += str[i];
+        t = t + str[i];
     }
     return t;
 }
