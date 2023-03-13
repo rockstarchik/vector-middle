@@ -36,24 +36,25 @@ void itc_odd_even_separator_lst(const vector <int>& lst, vector <int>& lst1, vec
 }
 
 void itc_pos_neg_separator_lst(const vector <int>& lst, vector <int>& lst1, vector <int>& lst2, vector <int>& lst3) {
+    int r;
     for (int i = 0; i < lst.size(); i++) {
-        if (lst[i] == 0)
+        if (lst[i] < 0)
             lst1.push_back(lst[i]);
-        else if (lst[i] < 0)
-            lst3.push_back(lst[i]);
-        else if (lst[i] > 0)
+        else if (lst[i] == 0)
             lst2.push_back(lst[i]);
+        else if (lst[i] > 0)
+            lst3.push_back(lst[i]);
     }
-    for (int i = 0; i < lst3.size(); i++) {
-        cout << ' ' << lst3[i];
+    for ( r = 0; r < lst1.size() - 1; r++) {
+        cout << lst1[r] << " ";
+    }
+    cout << lst1[r] << ",";
+    for (int t = 0; t < lst2.size(); t++) {
+        cout << " " << lst2[t];
     }
     cout << ", ";
-    for (int i = 0; i < lst1.size(); i++) {
-        cout << " " << lst1[i];
-    }
-    cout << ",  ";
-    for (int i = 1; i < lst2.size(); i++) {
-        cout << "  " << lst2[i];
+    for (int f = 0; f < lst3.size(); f++) {
+        cout << lst3[f] << " ";
     }
 }
 void itc_odd_even_analysis_lst(const vector <int>& lst) {

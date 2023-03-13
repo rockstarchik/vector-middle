@@ -13,10 +13,10 @@ return mass;
 }
 
 string itc_join(vector <char> lst, string sep) {
-    string str;
+    string str = "";
     for (int i = 0; i < lst.size(); i++) {
-        char a = lst[i];
-        str = str + a + sep;
+        str = str + lst[i];
+        str = str + sep;
     }
     return str;
 }
