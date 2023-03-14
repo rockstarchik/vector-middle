@@ -17,7 +17,6 @@ void itc_pos_neg_analysis_lst(const vector <int>& lst) {
     for (int i = 0; i < lst.size(); i++) {
         if (lst[i] == 0){
             nulls = nulls + 1;
-         cout << nulls << endl;
         }
         if (lst[i] > 0) {
             kolpos++;
