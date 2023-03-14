@@ -37,17 +37,11 @@ string itc_rmstrspc(string str) {
 
 string itc_rmstrchar(string str, string less) {
     string d = "";
-    int a = 0;
     for (int i = 0; str[i] != '\0'; i++) {
-        for (int j = 0; less[j] != '\0'; ++j) {
-            if (less[j] == str[i]) {
-                a = 1;
-            }
-            if (a == 0) {
+        for (int j = 0; less[j] != '\0'; j++) {
+            if (less[j] != str[i])
                 d = d + str[i];
-                a = 0;
             }
-        }
     }
     return d;
 }
